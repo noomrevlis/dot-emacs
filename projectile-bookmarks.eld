@@ -1,0 +1,1 @@
+("~/Desktop/KindleEar/" "~/virtualenv/pelican/myBlog/output/" "~/github/octopress/" "/usr/local/" "~/github/emacs-of-Jay/")
