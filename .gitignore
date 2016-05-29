@@ -10,6 +10,9 @@ elpa/
 .DS_Store
 
 # cache
+*~
+*.swp
+*.swo
 auto-save-list/
 *.eld
 *.elc
