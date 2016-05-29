@@ -1,6 +1,7 @@
 ;;socks proxy settings for emacs url package. 
 ;(setq url-gateway-method 'socks)
 ;(setq socks-server '("Default server" "127.0.0.1" 1080 5))
+
 ;; package management
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
@@ -20,15 +21,9 @@
 
 
 ;; ensure environment variables inside Emacs look the same as in the user's shell.
-(require 'exec-path-from-shell)
-(exec-path-from-shell-initialize)
+;(require 'exec-path-from-shell)
+;(exec-path-from-shell-initialize)
 
-;; default shell zsh
-(setq shell-file-name "/bin/zsh")
-;; To get rid of Weird color escape sequences in Emacs.
-;; Instruct Emacs to use emacs term-info not system term info
-;; http://stackoverflow.com/questions/8918910/weird-character-zsh-in-emacs-terminal
-(setq system-uses-terminfo nil)
 
 (setq evil-default-cursor t)
 (evil-mode t)
@@ -176,14 +171,6 @@
 (require 'evil-numbers)
 (define-key evil-normal-state-map (kbd "C-x C-a")  'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "C-x C-d")  'evil-numbers/dec-at-pt)
-
-(require 'elscreen)
-(elscreen-start)
-(elscreen-toggle-display-tab)
-
-(add-to-list 'load-path "~/.emacs.d/plugins/evil-tabs") ; only without ELPA/el-get
-(require 'evil-tabs)
-(global-evil-tabs-mode t)
 
 
 (require 'flx-ido)
@@ -352,7 +339,7 @@
                 '("\\.py\\'" flymake-pyflakes-init)))
 
 ;; automatically activate flymake-mode
-;;(add-hook 'find-file-hook 'flymake-find-file-hook)
+;(add-hook 'find-file-hook 'flymake-find-file-hook)
 
 (add-hook 'python-mode-hook '(lambda () (fci-mode 1)))
 
@@ -365,7 +352,6 @@
                       "/Users/noomrevlis/Projects/prospace/venv_prospace/"
                       "/Users/noomrevlis/Downloads/projects/flasky/venv/"))
 
-;(require 'python-django)
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 (add-hook 'python-mode-hook 'jedi:ac-setup)
@@ -375,11 +361,6 @@
 (setq-default ediff-ignore-similar-regions t)
 (setq ediff-split-window-function 'split-window-horizontally)
 
-
-;;ztree
-(require 'ediff-trees)
-(require 'ztree-diff)
-(require 'ztree-dir)
 
 ;; This is what you probably want if you are using a tiling window
 ;; manager under X, such as ratpoison.
@@ -420,6 +401,10 @@
 (add-hook 'ediff-quit-hook 'my-ediff-qh)
 
 
+;;ztree
+(require 'ediff-trees)
+(require 'ztree-diff)
+(require 'ztree-dir)
 
 ;; ztree key-binding
 (add-hook 'ztree-mode-hook

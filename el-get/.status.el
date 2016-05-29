@@ -55,8 +55,6 @@
                           (feat feats)
                         (unload-feature feat t))))
                   (require 'el-get))))
- (elscreen status "installed" recipe
-           (:name elscreen :description "Screen Manager for Emacsen" :website "https://github.com/emacs-jp/elscreen" :type github :pkgname "emacs-jp/elscreen"))
  (emacs-async status "installed" recipe
               (:name emacs-async :description "Simple library for asynchronous processing in Emacs" :type github :pkgname "jwiegley/emacs-async"))
  (epc status "installed" recipe
@@ -157,8 +155,6 @@
  (projectile status "installed" recipe
              (:name projectile :description "Project navigation and management library for Emacs." :type github :pkgname "bbatsov/projectile" :depends
                     (dash s f pkg-info)))
- (python-django status "installed" recipe
-                (:name python-django :description "An Emacs package for managing Django projects" :type github :pkgname "fgallina/python-django.el"))
  (python-environment status "installed" recipe
                      (:name python-environment :description "Python virtualenv API for Emacs Lisp" :type github :pkgname "tkf/emacs-python-environment" :depends
                             (deferred)))
