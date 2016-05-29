@@ -4252,8 +4252,8 @@ Select the `multi-term' dedicated window.
 
 ;;;***
 
-;;;### (autoloads nil "neotree/neotree" "neotree/neotree.el" (22087
-;;;;;;  64557 0 0))
+;;;### (autoloads nil "neotree/neotree" "neotree/neotree.el" (22346
+;;;;;;  54318 0 0))
 ;;; Generated autoloads from neotree/neotree.el
 
 (autoload 'neotree-find "neotree/neotree" "\
@@ -4262,24 +4262,13 @@ If path is nil and no buffer file name, then use DEFAULT-PATH,
 
 \(fn &optional PATH DEFAULT-PATH)" t nil)
 
-(autoload 'neotree-projectile-action "neotree/neotree" "\
-Integration with `Projectile'.
-
-Usage:
-    (setq projectile-switch-project-action 'neotree-projectile-action).
-
-When running `projectile-switch-project' (C-c p p), `neotree' will change root
-automatically.
-
-\(fn)" t nil)
-
 (autoload 'neotree-toggle "neotree/neotree" "\
 Toggle show the NeoTree window.
 
 \(fn)" t nil)
 
 (autoload 'neotree-show "neotree/neotree" "\
-Show the NeoTree window.
+Show the NeoTree widnow.
 
 \(fn)" t nil)
 
@@ -5468,7 +5457,7 @@ A major mode for displaying the directory tree in text mode.
 ;;;;;;  "sublimity/sublimity-attractive.el" "sublimity/sublimity-map.el"
 ;;;;;;  "sublimity/sublimity-scroll.el" "with-editor/with-editor.el"
 ;;;;;;  "ztree/ztree-diff-model.el" "ztree/ztree-util.el" "ztree/ztree.el")
-;;;;;;  (22346 54010 481831 0))
+;;;;;;  (22346 54319 138717 0))
 
 ;;;***
 
