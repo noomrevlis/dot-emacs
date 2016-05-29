@@ -1,0 +1,20 @@
+# jedi-env
+.python-environments/
+
+# eshell histories
+eshell/
+
+# package
+elpa/
+# os x
+.DS_Store
+
+# cache
+auto-save-list/
+*.eld
+*.elc
+*.last
+*.cache
+*.dat
+recentf
+tramp

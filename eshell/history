@@ -3,3 +3,98 @@ exit
 ll
 ls
 ls -l
+ll
+ls
+ls
+ll
+ls
+cd /var/
+ls
+cd www
+cd -
+cd -
+cd /var/
+ls
+exit
+ll
+ls
+cd www/
+ls
+cd v1_newchama_site_stage/
+ls
+cd current/
+ls
+du -sh .
+exit
+ll
+ls
+cd ..
+cd ls
+cd var
+ls
+cd /var/
+ls
+cd /
+cd /var/
+ls
+cd ~
+ls
+cd /var/
+ls
+cd -
+cd -
+ls
+exit
+cd ..
+ls
+cd ..
+cd /var
+ls
+cd-
+cd -
+ls
+cd ..
+ls
+ls
+exit
+ls
+exit
+l
+ls
+ll
+l
+ls
+cd news_web/
+ls
+exit
+exit
+ls
+dd
+python export.py 
+cd ../
+ls
+cd ../
+ls
+cd ..
+ls
+cd ..
+ls
+cd newchama/
+ls
+cd tools/
+ls
+python feedback.py
+ll
+ls
+ls -al
+ls
+python feedback.py
+ls
+exit
+l
+ls
+exit
+python export.py 
+ps -ef | grep uwsgi
+ps
+exit
