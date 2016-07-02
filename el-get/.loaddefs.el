@@ -4932,6 +4932,80 @@ See `projectile-mode' for more information on Projectile mode.
 
 ;;;***
 
+;;;### (autoloads nil "python-mode/test/doctest-mode" "python-mode/test/doctest-mode.el"
+;;;;;;  (22392 373 0 0))
+;;; Generated autoloads from python-mode/test/doctest-mode.el
+
+(autoload 'doctest-register-mmm-classes "python-mode/test/doctest-mode" "\
+Register doctest's mmm classes, allowing doctest to be used as a
+submode region in other major modes, such as python-mode and rst-mode.
+Two classes are registered:
+
+`doctest-docstring'
+
+    Used to edit docstrings containing doctest examples in python-
+    mode.  Docstring submode regions start and end with triple-quoted
+    strings (\"\"\").  In order to avoid confusing start-string
+    markers and end-string markers, all triple-quote strings in the
+    buffer are treated as submode regions (even if they're not
+    actually docstrings).  Use (C-c % C-d) to insert a new doctest-
+    docstring region.  When `doctest-execute' (C-c C-c) is called
+    inside a doctest-docstring region, it executes just the current
+    docstring.  The globals for this execution are constructed by
+    importing the current buffer's contents in Python.
+
+`doctest-example'
+
+    Used to edit doctest examples in text-editing modes, such as
+    `rst-mode' or `text-mode'.  Docstring submode regions start with
+    optionally indented prompts (>>>) and end with blank lines.  Use
+    (C-c % C-e) to insert a new doctest-example region.  When
+    `doctest-execute' (C-c C-c) is called inside a doctest-example
+    region, it executes all examples in the buffer.
+
+If ADD-MODE-EXT-CLASSES is true, then register the new classes in
+`mmm-mode-ext-classes-alist', which will cause them to be used by
+default in the following modes:
+
+    doctest-docstring:  python-mode
+    doctest-example:    rst-mode
+
+If FIX-MMM-FONTIFY-REGION-BUG is true, then register a hook that will
+fix a bug in `mmm-fontify-region' that affects some (but not all)
+versions of emacs.  (See `doctest-fixed-mmm-fontify-region' for more
+info.)
+
+\(fn &optional ADD-MODE-EXT-CLASSES FIX-MMM-FONTIFY-REGION-BUG)" t nil)
+
+(add-to-list 'auto-mode-alist '("\\.doctest$" . doctest-mode))
+
+(autoload 'doctest-mode "python-mode/test/doctest-mode" "\
+A major mode for editing text files that contain Python
+doctest examples.  Doctest is a testing framework for Python that
+emulates an interactive session, and checks the result of each
+command.  For more information, see the Python library reference:
+<http://docs.python.org/lib/module-doctest.html>
+
+`doctest-mode' defines three kinds of line, each of which is
+treated differently:
+
+  - 'Source lines' are lines consisting of a Python prompt
+    ('>>>' or '...'), followed by source code.  Source lines are
+    colored (similarly to `python-mode') and auto-indented.
+
+  - 'Output lines' are non-blank lines immediately following
+    source lines.  They are colored using several doctest-
+    specific output faces.
+
+  - 'Text lines' are any other lines.  They are not processed in
+    any special way.
+
+\\{doctest-mode-map}
+
+\(fn)" t nil)
+
+;;;***
+
 ;;;### (autoloads nil "pythonic/pythonic" "pythonic/pythonic.el"
 ;;;;;;  (22345 43100 0 0))
 ;;; Generated autoloads from pythonic/pythonic.el
@@ -5403,8 +5477,22 @@ A major mode for displaying the directory tree in text mode.
 ;;;;;;  "json-rpc/json-rpc.el" "magit/lisp/magit-autoloads.el" "magit/lisp/magit-core.el"
 ;;;;;;  "magit/lisp/magit-git.el" "magit/lisp/magit-mode.el" "magit/lisp/magit-popup.el"
 ;;;;;;  "magit/lisp/magit-process.el" "magit/lisp/magit-section.el"
-;;;;;;  "magit/lisp/magit-utils.el" "pos-tip/pos-tip.el" "s/s.el"
-;;;;;;  "smartparens/smartparens-config.el" "smartparens/smartparens-haskell.el"
+;;;;;;  "magit/lisp/magit-utils.el" "pos-tip/pos-tip.el" "python-mode/python-mode-pkg.el"
+;;;;;;  "python-mode/python-mode.el" "python-mode/test/py-bug-numbered-tests.el"
+;;;;;;  "python-mode/test/py-completion-tests.el" "python-mode/test/py-ert-always-split-lp-1361531-tests.el"
+;;;;;;  "python-mode/test/py-ert-beginning-tests.el" "python-mode/test/py-ert-end-tests.el"
+;;;;;;  "python-mode/test/py-ert-execute-block-test.el" "python-mode/test/py-ert-execute-region-test.el"
+;;;;;;  "python-mode/test/py-ert-forward-tests.el" "python-mode/test/py-ert-function-tests.el"
+;;;;;;  "python-mode/test/py-ert-interactive-tests.el" "python-mode/test/py-ert-just-two-split-lp-1361531-tests.el"
+;;;;;;  "python-mode/test/py-ert-tests-1.el" "python-mode/test/py-ert-tests-2.el"
+;;;;;;  "python-mode/test/py-ert-tests-3.el" "python-mode/test/py-ert-variablen-tests.el"
+;;;;;;  "python-mode/test/py-execute-region-commandp-test.el" "python-mode/test/py-interactive-tests.el"
+;;;;;;  "python-mode/test/py-non-travis-tests.el" "python-mode/test/py-shell-arg-ert-tests.el"
+;;;;;;  "python-mode/test/py-shell-completion-tests.el" "python-mode/test/py-shell-ert-tests.el"
+;;;;;;  "python-mode/test/py-split-window-on-execute-lp-1361531-test.el"
+;;;;;;  "python-mode/test/python-extended-executes-test.el" "python-mode/test/python-mode-syntax-test.el"
+;;;;;;  "python-mode/test/python-mode-test.el" "python-mode/test/setup-ert-tests.el"
+;;;;;;  "s/s.el" "smartparens/smartparens-config.el" "smartparens/smartparens-haskell.el"
 ;;;;;;  "smartparens/smartparens-html.el" "smartparens/smartparens-latex.el"
 ;;;;;;  "smartparens/smartparens-lua.el" "smartparens/smartparens-pkg.el"
 ;;;;;;  "smartparens/smartparens-python.el" "smartparens/smartparens-racket.el"
@@ -5415,7 +5503,7 @@ A major mode for displaying the directory tree in text mode.
 ;;;;;;  "sublimity/sublimity-attractive.el" "sublimity/sublimity-map.el"
 ;;;;;;  "sublimity/sublimity-scroll.el" "with-editor/with-editor.el"
 ;;;;;;  "ztree/ztree-diff-model.el" "ztree/ztree-util.el" "ztree/ztree.el")
-;;;;;;  (22346 54319 138717 0))
+;;;;;;  (22392 373 819959 0))
 
 ;;;***
 

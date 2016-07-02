@@ -21,8 +21,8 @@
 
 
 ;; ensure environment variables inside Emacs look the same as in the user's shell.
-;(require 'exec-path-from-shell)
-;(exec-path-from-shell-initialize)
+(require 'exec-path-from-shell)
+(exec-path-from-shell-initialize)
 
 
 (setq evil-default-cursor t)
@@ -95,6 +95,8 @@
 
 ; dired config
 (require 'dired-x)
+;(setq dired-omit-files "^\\.pdf$\\|\\.git$\\|\\.DS_Store$")
+(setq dired-omit-files "\\.DS_Store$")
 (setq dired-omit-extensions (append '(".pyc" ".pyo")
                              dired-omit-extensions))
 (setq dired-recursive-deletes t)
@@ -301,11 +303,6 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-
-; python-mode
-(setq py-install-directory "~/.emacs.d/plugins/python-mode")
-(add-to-list 'load-path py-install-directory)
-(require 'python-mode)
 
 ; use IPython
 ;(setq-default py-shell-name "/usr/local/bin/ipython") ;; which ipython

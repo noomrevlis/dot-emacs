@@ -158,6 +158,19 @@
  (python-environment status "installed" recipe
                      (:name python-environment :description "Python virtualenv API for Emacs Lisp" :type github :pkgname "tkf/emacs-python-environment" :depends
                             (deferred)))
+ (python-mode status "installed" recipe
+              (:name python-mode :description "Major mode for editing Python programs" :type bzr :url "lp:python-mode" :load-path
+                     ("." "test")
+                     :compile nil :prepare
+                     (progn
+                       (autoload 'python-mode "python-mode" "Python editing mode." t)
+                       (autoload 'doctest-mode "doctest-mode" "Doctest unittest editing mode." t)
+                       (setq py-install-directory
+                             (el-get-package-directory "python-mode"))
+                       (add-to-list 'auto-mode-alist
+                                    '("\\.py$" . python-mode))
+                       (add-to-list 'interpreter-mode-alist
+                                    '("python" . python-mode)))))
  (pythonic status "installed" recipe
            (:name pythonic :description "Utility functions for writing pythonic emacs package." :type github :pkgname "proofit404/pythonic"))
  (request status "installed" recipe
@@ -186,6 +199,6 @@
  (websocket status "installed" recipe
             (:name websocket :description "A websocket implementation in elisp, for emacs." :type github :pkgname "ahyatt/emacs-websocket"))
  (with-editor status "installed" recipe
-   (:name with-editor :description "Use the Emacsclient as $EDITOR" :type github :pkgname "magit/with-editor"))
+              (:name with-editor :description "Use the Emacsclient as $EDITOR" :type github :pkgname "magit/with-editor"))
  (ztree status "installed" recipe
         (:name ztree :description "Text-tree applications inside Emacs." :type github :pkgname "fourier/ztree")))
