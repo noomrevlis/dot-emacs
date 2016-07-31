@@ -1,4 +1,4 @@
-;;socks proxy settings for emacs url package. 
+;;socks proxy settings for emacs url package.
 ;(setq url-gateway-method 'socks)
 ;(setq socks-server '("Default server" "127.0.0.1" 1080 5))
 
@@ -6,7 +6,7 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 ;; use C-u scroll up, set before evil loaded
-(setq evil-want-C-u-scroll t) 
+(setq evil-want-C-u-scroll t)
 ;; el-get config
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil 'noerror)
@@ -77,7 +77,7 @@
 (require 'ace-jump-mode)
 (autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t)
 ;; you can select the key you prefer to
-(define-key global-map (kbd "C-c SPC ") 'ace-jump-mode) 
+(define-key global-map (kbd "C-c SPC ") 'ace-jump-mode)
 
 ;; ag
 (setq ag-reuse-buffers 't)
@@ -200,6 +200,7 @@
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
+
 ;; no startup msg
 (setq inhibit-startup-message t)        ; Disable startup message
 (setq gnus-inhibit-startup-message t)
@@ -234,12 +235,8 @@
 
 (setq x-select-enable-clipboard t)
 
-
 ;; multi-term
-
 (require 'multi-term)
-(setq multi-term-program "/bin/zsh")
-(define-key global-map (kbd "C-x e") 'multi-term)
 (defun term-send-kill-whole-line ()
   "Kill whole line in term mode."
   (interactive)
@@ -251,10 +248,13 @@
   (interactive)
   (term-send-raw-string "\C-k"))
 
+(setq multi-term-program "/bin/zsh")
+(define-key global-map (kbd "C-x e") 'multi-term)
 (setq term-unbind-key-list '("C-x" "<ESC>" "C-c" "C-h"))
 (setq term-bind-key-alist
       '(("C-c" . term-interrupt-subjob)
         ("C-p" . term-send-up)
+        ("C-h" . term-send-backspace)
         ("C-n" . term-send-down)
         ("C-s" . isearch-forward)
         ("C-r" . term-send-reverse-search-history)
