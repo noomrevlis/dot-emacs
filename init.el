@@ -2,6 +2,9 @@
 ;(setq url-gateway-method 'socks)
 ;(setq socks-server '("Default server" "127.0.0.1" 1080 5))
 
+; Suppressing ad-handle-definition Warnings
+(setq ad-redefinition-action 'accept)
+
 ;; package management
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
@@ -521,7 +524,7 @@
 ;(set-frame-parameter nil 'fullscreen 'maximized)
 
 ;; init fullboth
-;(set-frame-parameter nil 'fullscreen 'fullboth)
+(set-frame-parameter nil 'fullscreen 'fullboth)
 
 (venv-workon "venv-newchama")
 
@@ -566,3 +569,9 @@
                    (list 'autopair-default-handle-action
                          '(lambda (action pair pos-before)
                             (hl-paren-color-update))))))
+
+(add-to-list 'load-path "~/.emacs.d/el-get/default-text-scale")
+(require 'default-text-scale)
+(global-set-key (kbd "C-M-=") 'default-text-scale-increase)
+(global-set-key (kbd "C-M--") 'default-text-scale-decrease)
+
