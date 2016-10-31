@@ -1010,7 +1010,7 @@ Special commands:
 ;;;***
 
 ;;;### (autoloads nil "helm-swoop/helm-swoop" "helm-swoop/helm-swoop.el"
-;;;;;;  (22087 33360 0 0))
+;;;;;;  (22549 48649 0 0))
 ;;; Generated autoloads from helm-swoop/helm-swoop.el
 
 (autoload 'helm-swoop-back-to-last-point "helm-swoop/helm-swoop" "\
@@ -1056,6 +1056,21 @@ Applies all org-mode buffers to helm-multi-swoop
 Applies all buffers of the same mode as the current buffer to helm-multi-swoop
 
 \(fn &optional $QUERY)" t nil)
+
+(autoload 'helm-multi-swoop-projectile "helm-swoop/helm-swoop" "\
+Apply all opened buffers of the current project to helm-multi-swoop
+
+\(fn &optional $QUERY)" t nil)
+
+(autoload 'helm-swoop-without-pre-input "helm-swoop/helm-swoop" "\
+Start helm-swoop without pre input query.
+
+\(fn)" t nil)
+
+(autoload 'helm-swoop-symble-pre-input "helm-swoop/helm-swoop" "\
+Start helm-swoop without pre input query.
+
+\(fn)" t nil)
 
 (autoload 'helm-multi-swoop-edit "helm-swoop/helm-swoop" "\
 
@@ -5503,7 +5518,7 @@ A major mode for displaying the directory tree in text mode.
 ;;;;;;  "sublimity/sublimity-attractive.el" "sublimity/sublimity-map.el"
 ;;;;;;  "sublimity/sublimity-scroll.el" "with-editor/with-editor.el"
 ;;;;;;  "ztree/ztree-diff-model.el" "ztree/ztree-util.el" "ztree/ztree.el")
-;;;;;;  (22446 57143 331620 0))
+;;;;;;  (22550 44010 36102 0))
 
 ;;;***
 

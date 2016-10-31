@@ -89,7 +89,7 @@
 	  '(lambda ()
 	     (evil-mode t)))
 
-;; smooth scroll Todo: put into el-get
+;; smooth scroll
 (require 'sublimity)
 (require 'sublimity-scroll)
 (setq sublimity-scroll-weight 10
@@ -124,6 +124,7 @@
 (global-set-key (kbd "M-x")  'helm-M-x)
 ;(global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-c h s") 'helm-swoop)
+(setq helm-swoop-use-fuzzy-match t)
 (setq helm-M-x-fuzzy-match t) ;; optional fuzzy matching for helm-M-x
 (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
       ;helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
@@ -521,10 +522,10 @@
 
 
 ;; init max
-;(set-frame-parameter nil 'fullscreen 'maximized)
+(set-frame-parameter nil 'fullscreen 'maximized)
 
 ;; init fullboth
-(set-frame-parameter nil 'fullscreen 'fullboth)
+;(set-frame-parameter nil 'fullscreen 'fullboth)
 
 (venv-workon "venv-newchama")
 
