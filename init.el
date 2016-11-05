@@ -576,3 +576,11 @@
 (global-set-key (kbd "C-M-=") 'default-text-scale-increase)
 (global-set-key (kbd "C-M--") 'default-text-scale-decrease)
 
+;; workaround for long ControlPath on darwin
+;;https://github.com/martinp/emacs.d/blob/master/lisp/init-tramp.el
+
+;;you have to switch to emacs-25 or use the last version of tramp, or modify tramp-ssh-controlmaster-options 
+;;https://github.com/emacs-helm/helm/issues/1000
+(when (eq system-type 'darwin)
+  (setq tramp-ssh-controlmaster-options
+  "-o ControlPath=/tmp/%%r@%%h:%%p -o ControlMaster=auto -o ControlPersist=no"))
