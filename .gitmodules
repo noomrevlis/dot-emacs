@@ -1,0 +1,3 @@
+[submodule "el-get/smooth-scrolling"]
+	path = el-get/smooth-scrolling
+	url = https://github.com/aspiers/smooth-scrolling.git

@@ -156,7 +156,7 @@
 "e" 'helm-swoop
 "d" 'dired-jump
 "c" 'helm-find-files
-;"k" 'browse-kill-ring
+"k" 'delete-trailing-whitespace
 "s" 'helm-M-x
 "a" 'helm-projectile-ag
 "r" 'helm-resume
@@ -317,7 +317,7 @@
 ;; fill-column-indicator
 (require 'fill-column-indicator)
 
-
+;; alternative flycheck http://www.flycheck.org/en/latest/user/installation.html
 ;;flymake with pyflakes
 (when (load "flymake" t)
        (defun flymake-pyflakes-init ()
@@ -326,10 +326,20 @@
             (local-file (file-relative-name
                          temp-file
                          (file-name-directory buffer-file-name))))
-           (list "pyflakes" (list local-file))))
+                (list "pyflakes" (list local-file))
+                ;(list "pep8" (list "--repeat" local-file))
+           )
+         )
 
        (add-to-list 'flymake-allowed-file-name-masks
                 '("\\.py\\'" flymake-pyflakes-init)))
+
+; flymake hint
+(defun my-flymake-show-help ()
+  (when (get-char-property (point) 'flymake-overlay)
+    (let ((help (get-char-property (point) 'help-echo)))
+      (if help (message "%s" help)))))
+(add-hook 'post-command-hook 'my-flymake-show-help)
 
 ;; automatically activate flymake-mode
 (add-hook 'find-file-hook 'flymake-find-file-hook)
@@ -567,7 +577,7 @@
 ;; workaround for long ControlPath on darwin
 ;;https://github.com/martinp/emacs.d/blob/master/lisp/init-tramp.el
 
-;;you have to switch to emacs-25 or use the last version of tramp, or modify tramp-ssh-controlmaster-options 
+;;you have to switch to emacs-25 or use the last version of tramp, or modify tramp-ssh-controlmaster-options
 ;;https://github.com/emacs-helm/helm/issues/1000
 (when (eq system-type 'darwin)
   (setq tramp-ssh-controlmaster-options
@@ -579,3 +589,25 @@
 (setq sublimity-scroll-weight 10
       sublimity-scroll-drift-length 5)
 (sublimity-mode 1)
+
+(defun tf-toggle-show-trailing-whitespace ()
+  "Toggle show-trailing-whitespace between t and nil"
+  (interactive)
+  (setq show-trailing-whitespace (not show-trailing-whitespace)))
+
+;; Remove trailing whitespace manually by typing C-t C-w.
+(add-hook 'python-mode-hook
+          (lambda ()
+            (setq show-trailing-whitespace t)))
+
+;; Automatically remove trailing whitespace when file is saved.
+(add-hook 'python-mode-hook
+      (lambda()
+        (add-hook 'local-write-file-hooks
+              '(lambda()
+                 (save-excursion
+                   (delete-trailing-whitespace))))))
+
+;https://github.com/aspiers/smooth-scrolling
+(require 'smooth-scrolling)
+(smooth-scrolling-mode 1)
