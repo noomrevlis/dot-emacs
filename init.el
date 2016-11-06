@@ -89,12 +89,6 @@
 	  '(lambda ()
 	     (evil-mode t)))
 
-;; smooth scroll
-(require 'sublimity)
-(require 'sublimity-scroll)
-(setq sublimity-scroll-weight 10
-      sublimity-scroll-drift-length 5)
-(sublimity-mode 1)
 
 ; dired config
 (require 'dired-x)
@@ -136,6 +130,9 @@
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+
+; helm-ag
+(setq helm-ag-use-agignore t)
 
 ;; keychord
 (require 'key-chord)
@@ -286,11 +283,6 @@
             (add-to-list 'term-bind-key-alist '("M-]" . multi-term-next))
             (setq term-buffer-maximum-size 10000)))
 
-(defun create-shell ()
-    "creates a shell with a given name"
-    (interactive);; "Prompt\n shell name:")
-    (let ((shell-name (read-string "shell name: " nil)))
-    (shell (concat "*" shell-name "*"))))
 
 (setq multi-term-dedicated-select-after-open-p t)
 (add-hook 'term-mode-hook (lambda ()
@@ -340,7 +332,7 @@
                 '("\\.py\\'" flymake-pyflakes-init)))
 
 ;; automatically activate flymake-mode
-;(add-hook 'find-file-hook 'flymake-find-file-hook)
+(add-hook 'find-file-hook 'flymake-find-file-hook)
 
 (add-hook 'python-mode-hook '(lambda () (fci-mode 1)))
 
@@ -348,9 +340,7 @@
 (require 'virtualenvwrapper)
 (venv-initialize-interactive-shells) ;; if you want interactive shell support
 (venv-initialize-eshell) ;; if you want eshell support
-;(setq venv-location "/Users/noomrevlis/Downloads/projects/flasky/venv/")
 (setq venv-location '("/Users/noomrevlis/Projects/newchama/venv-newchama/"
-                      "/Users/noomrevlis/Projects/prospace/venv_prospace/"
                       "/Users/noomrevlis/Downloads/projects/flasky/venv/"))
 
 (add-hook 'python-mode-hook 'jedi:setup)
@@ -543,8 +533,6 @@
             (call-interactively 'ztree-dir))))
     (delete-other-windows)))
 
-; helm-ag
-(setq helm-ag-use-agignore t)
 
 ;; 显示括号匹配
 (show-paren-mode t)
@@ -584,3 +572,10 @@
 (when (eq system-type 'darwin)
   (setq tramp-ssh-controlmaster-options
   "-o ControlPath=/tmp/%%r@%%h:%%p -o ControlMaster=auto -o ControlPersist=no"))
+
+;; smooth scroll
+(require 'sublimity)
+(require 'sublimity-scroll)
+(setq sublimity-scroll-weight 10
+      sublimity-scroll-drift-length 5)
+(sublimity-mode 1)
