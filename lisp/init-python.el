@@ -20,7 +20,7 @@
        (add-to-list 'flymake-allowed-file-name-masks
                 '("\\.py\\'" flymake-pyflakes-init)))
 
-(delete '("\\.html?\\'" flymake-xml-init) flymake-allowed-file-name-masks)
+(delete '("\\.html?\\'" flymake-xml-init) flymake-allowed-file-name-masks) ;; disable check on html file
 
 ; flymake hint
 (defun my-flymake-show-help ()
@@ -42,12 +42,12 @@
 (add-hook 'python-mode-hook 'jedi:ac-setup)
 
 ;; Automatically remove trailing whitespace when file is saved.
-(add-hook 'python-mode-hook
-      (lambda()
-        (add-hook 'local-write-file-hooks
-              '(lambda()
-                 (save-excursion
-                   (delete-trailing-whitespace))))))
+;(add-hook 'python-mode-hook
+;      (lambda()
+;        (add-hook 'local-write-file-hooks
+;              '(lambda()
+;                 (save-excursion
+;                   (delete-trailing-whitespace))))))
 
 
 ; dash doc 

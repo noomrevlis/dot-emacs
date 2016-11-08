@@ -1,8 +1,4 @@
-((ace-jump-mode status "installed" recipe
-                (:name ace-jump-mode :website "https://github.com/winterTTr/ace-jump-mode/wiki" :description "A quick cursor location minor mode for emacs." :type github :pkgname "winterTTr/ace-jump-mode" :prepare
-                       (eval-after-load "ace-jump-mode"
-                         '(ace-jump-mode-enable-mark-sync))))
- (ag status "installed" recipe
+((ag status "installed" recipe
      (:name ag :description "A simple ag frontend, loosely based on ack-and-half.el." :type github :pkgname "Wilfred/ag.el" :depends
             (dash s)))
  (auto-complete status "installed" recipe
@@ -17,6 +13,9 @@
            (:name autopair :website "https://github.com/capitaomorte/autopair" :description "Autopair is an extension to the Emacs text editor that automatically pairs braces and quotes." :type github :pkgname "capitaomorte/autopair" :features autopair))
  (autopep8 status "installed" recipe
            (:name autopep8 :description "autopep8 wrapper for emacs" :type http :url "https://gist.github.com/whirm/6122031/raw/28d0d47a95a9006b7fbb8d5ac5203577c52b9534/autopep8.el" :features autopep8))
+ (avy status "installed" recipe
+      (:name avy :description "Jump to things in Emacs tree-style." :type github :pkgname "abo-abo/avy" :depends
+             (cl-lib)))
  (browse-kill-ring status "installed" recipe
                    (:name browse-kill-ring :description "Interactively insert items from kill-ring" :type github :pkgname "browse-kill-ring/browse-kill-ring" :prepare
                           (progn
@@ -201,6 +200,6 @@
  (websocket status "installed" recipe
             (:name websocket :description "A websocket implementation in elisp, for emacs." :type github :pkgname "ahyatt/emacs-websocket"))
  (with-editor status "installed" recipe
-              (:name with-editor :description "Use the Emacsclient as $EDITOR" :type github :pkgname "magit/with-editor"))
+   (:name with-editor :description "Use the Emacsclient as $EDITOR" :type github :pkgname "magit/with-editor"))
  (ztree status "installed" recipe
         (:name ztree :description "Text-tree applications inside Emacs." :type github :pkgname "fourier/ztree")))

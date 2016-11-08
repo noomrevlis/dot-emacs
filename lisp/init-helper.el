@@ -1,11 +1,6 @@
 
-;; ace jump mode major function
-;; consider use avy to replace it
-;; http://emacsredux.com/blog/2015/07/19/ace-jump-mode-is-dead-long-live-avy/
-(autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t)
-;; you can select the key you prefer to
-(define-key global-map (kbd "C-c SPC ") 'ace-jump-mode)
-
+;; avy style
+(setq avy-styles-alist '((avy-goto-char-2 . post)))
 
 
 ; parent
