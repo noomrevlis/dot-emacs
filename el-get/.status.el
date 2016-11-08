@@ -201,6 +201,6 @@
  (websocket status "installed" recipe
             (:name websocket :description "A websocket implementation in elisp, for emacs." :type github :pkgname "ahyatt/emacs-websocket"))
  (with-editor status "installed" recipe
-   (:name with-editor :description "Use the Emacsclient as $EDITOR" :type github :pkgname "magit/with-editor"))
+              (:name with-editor :description "Use the Emacsclient as $EDITOR" :type github :pkgname "magit/with-editor"))
  (ztree status "installed" recipe
         (:name ztree :description "Text-tree applications inside Emacs." :type github :pkgname "fourier/ztree")))
