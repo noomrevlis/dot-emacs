@@ -11,7 +11,8 @@
 "x" 'er/expand-region
 "l" 'linum-mode
 "f" 'ido-find-file
-"j" 'ace-jump-mode
+;"j" 'ace-jump-mode
+"j" 'avy-goto-char-2
 "q" 'kill-this-buffer
 "h" 'helm-projectile-find-file
 "g" 'jedi:goto-definition

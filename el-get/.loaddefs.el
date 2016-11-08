@@ -3,58 +3,6 @@
 ;;; Code:
 
 
-;;;### (autoloads nil "ace-jump-mode/ace-jump-mode" "ace-jump-mode/ace-jump-mode.el"
-;;;;;;  (22346 45869 0 0))
-;;; Generated autoloads from ace-jump-mode/ace-jump-mode.el
-
-(autoload 'ace-jump-mode-pop-mark "ace-jump-mode/ace-jump-mode" "\
-Pop up a postion from `ace-jump-mode-mark-ring', and jump back to that position
-
-\(fn)" t nil)
-
-(autoload 'ace-jump-char-mode "ace-jump-mode/ace-jump-mode" "\
-AceJump char mode
-
-\(fn QUERY-CHAR)" t nil)
-
-(autoload 'ace-jump-word-mode "ace-jump-mode/ace-jump-mode" "\
-AceJump word mode.
-You can set `ace-jump-word-mode-use-query-char' to nil to prevent
-asking for a head char, that will mark all the word in current
-buffer.
-
-\(fn HEAD-CHAR)" t nil)
-
-(autoload 'ace-jump-line-mode "ace-jump-mode/ace-jump-mode" "\
-AceJump line mode.
-Marked each no empty line and move there
-
-\(fn)" t nil)
-
-(autoload 'ace-jump-mode "ace-jump-mode/ace-jump-mode" "\
-AceJump mode is a minor mode for you to quick jump to a
-position in the curret view.
-   There is three submode now:
-     `ace-jump-char-mode'
-     `ace-jump-word-mode'
-     `ace-jump-line-mode'
-
-You can specify the sequence about which mode should enter
-by customize `ace-jump-mode-submode-list'.
-
-If you do not want to query char for word mode, you can change
-`ace-jump-word-mode-use-query-char' to nil.
-
-If you don't like the default move keys, you can change it by
-setting `ace-jump-mode-move-keys'.
-
-You can constrol whether use the case sensitive via
-`ace-jump-mode-case-fold'.
-
-\(fn &optional PREFIX)" t nil)
-
-;;;***
-
 ;;;### (autoloads nil "ag/ag" "ag/ag.el" (22087 4697 0 0))
 ;;; Generated autoloads from ag/ag.el
 
@@ -241,6 +189,213 @@ ARG is omitted or nil.
 Autopair mode is enabled in all buffers where
 `autopair-on' would do it.
 See `autopair-mode' for more information on Autopair mode.
+
+\(fn &optional ARG)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "avy/avy" "avy/avy.el" (22561 43534 0 0))
+;;; Generated autoloads from avy/avy.el
+
+(autoload 'avy-goto-char "avy/avy" "\
+Jump to the currently visible CHAR.
+The window scope is determined by `avy-all-windows' (ARG negates it).
+
+\(fn CHAR &optional ARG)" t nil)
+
+(autoload 'avy-goto-char-in-line "avy/avy" "\
+Jump to the currently visible CHAR in the current line.
+
+\(fn CHAR)" t nil)
+
+(autoload 'avy-goto-char-2 "avy/avy" "\
+Jump to the currently visible CHAR1 followed by CHAR2.
+The window scope is determined by `avy-all-windows' (ARG negates it).
+
+\(fn CHAR1 CHAR2 &optional ARG BEG END)" t nil)
+
+(autoload 'avy-goto-char-2-above "avy/avy" "\
+Jump to the currently visible CHAR1 followed by CHAR2.
+This is a scoped version of `avy-goto-char-2', where the scope is
+the visible part of the current buffer up to point.
+
+\(fn CHAR1 CHAR2 &optional ARG)" t nil)
+
+(autoload 'avy-goto-char-2-below "avy/avy" "\
+Jump to the currently visible CHAR1 followed by CHAR2.
+This is a scoped version of `avy-goto-char-2', where the scope is
+the visible part of the current buffer following point.
+
+\(fn CHAR1 CHAR2 &optional ARG)" t nil)
+
+(autoload 'avy-isearch "avy/avy" "\
+Jump to one of the current isearch candidates.
+
+\(fn)" t nil)
+
+(autoload 'avy-goto-word-0 "avy/avy" "\
+Jump to a word start.
+The window scope is determined by `avy-all-windows' (ARG negates it).
+
+\(fn ARG)" t nil)
+
+(autoload 'avy-goto-word-1 "avy/avy" "\
+Jump to the currently visible CHAR at a word start.
+The window scope is determined by `avy-all-windows' (ARG negates it).
+
+\(fn CHAR &optional ARG BEG END SYMBOL)" t nil)
+
+(autoload 'avy-goto-word-1-above "avy/avy" "\
+Jump to the currently visible CHAR at a word start.
+This is a scoped version of `avy-goto-word-1', where the scope is
+the visible part of the current buffer up to point. 
+
+\(fn CHAR &optional ARG)" t nil)
+
+(autoload 'avy-goto-word-1-below "avy/avy" "\
+Jump to the currently visible CHAR at a word start.
+This is a scoped version of `avy-goto-word-1', where the scope is
+the visible part of the current buffer following point. 
+
+\(fn CHAR &optional ARG)" t nil)
+
+(autoload 'avy-goto-symbol-1 "avy/avy" "\
+Jump to the currently visible CHAR at a symbol start.
+The window scope is determined by `avy-all-windows' (ARG negates it).
+
+\(fn CHAR &optional ARG)" t nil)
+
+(autoload 'avy-goto-symbol-1-above "avy/avy" "\
+Jump to the currently visible CHAR at a symbol start.
+This is a scoped version of `avy-goto-symbol-1', where the scope is
+the visible part of the current buffer up to point. 
+
+\(fn CHAR &optional ARG)" t nil)
+
+(autoload 'avy-goto-symbol-1-below "avy/avy" "\
+Jump to the currently visible CHAR at a symbol start.
+This is a scoped version of `avy-goto-symbol-1', where the scope is
+the visible part of the current buffer following point. 
+
+\(fn CHAR &optional ARG)" t nil)
+
+(autoload 'avy-goto-subword-0 "avy/avy" "\
+Jump to a word or subword start.
+
+The window scope is determined by `avy-all-windows' (ARG negates it).
+
+When PREDICATE is non-nil it's a function of zero parameters that
+should return true.
+
+\(fn &optional ARG PREDICATE)" t nil)
+
+(autoload 'avy-goto-subword-1 "avy/avy" "\
+Jump to the currently visible CHAR at a subword start.
+The window scope is determined by `avy-all-windows' (ARG negates it).
+The case of CHAR is ignored.
+
+\(fn CHAR &optional ARG)" t nil)
+
+(autoload 'avy-goto-word-or-subword-1 "avy/avy" "\
+Forward to `avy-goto-subword-1' or `avy-goto-word-1'.
+Which one depends on variable `subword-mode'.
+
+\(fn)" t nil)
+
+(autoload 'avy-goto-line "avy/avy" "\
+Jump to a line start in current buffer.
+
+When ARG is 1, jump to lines currently visible, with the option
+to cancel to `goto-line' by entering a number.
+
+When ARG is 4, negate the window scope determined by
+`avy-all-windows'.
+
+Otherwise, forward to `goto-line' with ARG.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'avy-goto-line-above "avy/avy" "\
+Goto visible line above the cursor.
+
+\(fn)" t nil)
+
+(autoload 'avy-goto-line-below "avy/avy" "\
+Goto visible line below the cursor.
+
+\(fn)" t nil)
+
+(autoload 'avy-copy-line "avy/avy" "\
+Copy a selected line above the current line.
+ARG lines can be used.
+
+\(fn ARG)" t nil)
+
+(autoload 'avy-move-line "avy/avy" "\
+Move a selected line above the current line.
+ARG lines can be used.
+
+\(fn ARG)" t nil)
+
+(autoload 'avy-copy-region "avy/avy" "\
+Select two lines and copy the text between them to point.
+
+The window scope is determined by `avy-all-windows' or
+`avy-all-windows-alt' when ARG is non-nil.
+
+\(fn ARG)" t nil)
+
+(autoload 'avy-move-region "avy/avy" "\
+Select two lines and move the text between them here.
+
+\(fn)" t nil)
+
+(autoload 'avy-kill-region "avy/avy" "\
+Select two lines and kill the region between them.
+
+The window scope is determined by `avy-all-windows' or
+`avy-all-windows-alt' when ARG is non-nil.
+
+\(fn ARG)" t nil)
+
+(autoload 'avy-kill-ring-save-region "avy/avy" "\
+Select two lines and save the region between them to the kill ring.
+
+\(fn ARG)" t nil)
+
+(autoload 'avy-kill-whole-line "avy/avy" "\
+Select line and kill the whole selected line.
+
+With a numerical prefix ARG, kill ARG line(s) starting from the
+selected line. If ARG is negative, kill backward.
+
+If ARG is zero, kill the selected line but exclude the trailing
+newline.
+
+\\[universal-argument] 3 \\[avy-kil-whole-line] kill three lines
+starting from the selected line.  \\[universal-argument] -3
+
+\\[avy-kill-whole-line] kill three lines backward including the
+selected line.
+
+\(fn ARG)" t nil)
+
+(autoload 'avy-kill-ring-save-whole-line "avy/avy" "\
+Select line and Save the whole selected line as if killed, but don’t kill it.
+
+This command is similar to `avy-kill-whole-line', except that it
+saves the line(s) as if killed, but does not kill it(them).
+
+\(fn ARG)" t nil)
+
+(autoload 'avy-setup-default "avy/avy" "\
+Setup the default shortcuts.
+
+\(fn)" nil nil)
+
+(autoload 'avy-goto-char-timer "avy/avy" "\
+Read one or many consecutive chars and jump to the first one.
+The window scope is determined by `avy-all-windows' (ARG negates it).
 
 \(fn &optional ARG)" t nil)
 
@@ -5548,8 +5703,8 @@ A major mode for displaying the directory tree in text mode.
 ;;;***
 
 ;;;### (autoloads nil nil ("autopair/autopair-tests.el" "autopep8/autopep8.el"
-;;;;;;  "dash/dash-functional.el" "dash/dash.el" "el-get/el-get-autoloading.el"
-;;;;;;  "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
+;;;;;;  "avy/avy-test.el" "dash/dash-functional.el" "dash/dash.el"
+;;;;;;  "el-get/el-get-autoloading.el" "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
 ;;;;;;  "el-get/el-get-core.el" "el-get/el-get-custom.el" "el-get/el-get-dependencies.el"
 ;;;;;;  "el-get/el-get-install.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
 ;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "emacs-async/async-pkg.el"
@@ -5590,7 +5745,7 @@ A major mode for displaying the directory tree in text mode.
 ;;;;;;  "sublimity/sublimity-attractive.el" "sublimity/sublimity-map.el"
 ;;;;;;  "sublimity/sublimity-scroll.el" "with-editor/with-editor.el"
 ;;;;;;  "ztree/ztree-diff-model.el" "ztree/ztree-util.el" "ztree/ztree.el")
-;;;;;;  (22558 62618 859271 0))
+;;;;;;  (22561 43535 210799 0))
 
 ;;;***
 
