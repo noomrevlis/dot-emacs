@@ -9,6 +9,6 @@
 (require 'init-dired)
 (require 'init-search)
 (require 'init-diff)
-(require 'init-ui)
 (require 'init-term)
 (require 'init-python)
+(require 'init-ui)

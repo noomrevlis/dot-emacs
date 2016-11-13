@@ -5702,9 +5702,9 @@ A major mode for displaying the directory tree in text mode.
 
 ;;;***
 
-;;;### (autoloads nil nil ("autopair/autopair-tests.el" "autopep8/autopep8.el"
-;;;;;;  "avy/avy-test.el" "dash/dash-functional.el" "dash/dash.el"
-;;;;;;  "el-get/el-get-autoloading.el" "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
+;;;### (autoloads nil nil ("autopair/autopair-tests.el" "avy/avy-test.el"
+;;;;;;  "dash/dash-functional.el" "dash/dash.el" "el-get/el-get-autoloading.el"
+;;;;;;  "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
 ;;;;;;  "el-get/el-get-core.el" "el-get/el-get-custom.el" "el-get/el-get-dependencies.el"
 ;;;;;;  "el-get/el-get-install.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
 ;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "emacs-async/async-pkg.el"
@@ -5719,9 +5719,10 @@ A major mode for displaying the directory tree in text mode.
 ;;;;;;  "json-rpc/json-rpc.el" "magit/lisp/magit-autoloads.el" "magit/lisp/magit-core.el"
 ;;;;;;  "magit/lisp/magit-git.el" "magit/lisp/magit-mode.el" "magit/lisp/magit-popup.el"
 ;;;;;;  "magit/lisp/magit-process.el" "magit/lisp/magit-section.el"
-;;;;;;  "magit/lisp/magit-utils.el" "pos-tip/pos-tip.el" "python-mode/python-mode-pkg.el"
-;;;;;;  "python-mode/python-mode.el" "python-mode/test/py-bug-numbered-tests.el"
-;;;;;;  "python-mode/test/py-completion-tests.el" "python-mode/test/py-ert-always-split-lp-1361531-tests.el"
+;;;;;;  "magit/lisp/magit-utils.el" "markerpen/markerpen.el" "pos-tip/pos-tip.el"
+;;;;;;  "python-mode/python-mode-pkg.el" "python-mode/python-mode.el"
+;;;;;;  "python-mode/test/py-bug-numbered-tests.el" "python-mode/test/py-completion-tests.el"
+;;;;;;  "python-mode/test/py-ert-always-split-lp-1361531-tests.el"
 ;;;;;;  "python-mode/test/py-ert-beginning-tests.el" "python-mode/test/py-ert-end-tests.el"
 ;;;;;;  "python-mode/test/py-ert-execute-block-test.el" "python-mode/test/py-ert-execute-region-test.el"
 ;;;;;;  "python-mode/test/py-ert-forward-tests.el" "python-mode/test/py-ert-function-tests.el"
@@ -5745,7 +5746,7 @@ A major mode for displaying the directory tree in text mode.
 ;;;;;;  "sublimity/sublimity-attractive.el" "sublimity/sublimity-map.el"
 ;;;;;;  "sublimity/sublimity-scroll.el" "with-editor/with-editor.el"
 ;;;;;;  "ztree/ztree-diff-model.el" "ztree/ztree-util.el" "ztree/ztree.el")
-;;;;;;  (22561 43535 210799 0))
+;;;;;;  (22567 63407 559630 0))
 
 ;;;***
 

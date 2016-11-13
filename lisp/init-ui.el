@@ -44,4 +44,5 @@
 ;(global-set-key [f5] 'toggle-frame-fullscreen)
 ;(set-frame-parameter nil 'fullscreen 'fullboth) ;; init fullboth
 
+
 (provide 'init-ui)

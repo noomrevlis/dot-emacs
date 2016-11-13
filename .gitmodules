@@ -1,6 +1,0 @@
-[submodule "el-get/smooth-scrolling"]
-	path = el-get/smooth-scrolling
-	url = https://github.com/aspiers/smooth-scrolling.git
-[submodule "el-get/avy"]
-	path = el-get/avy
-	url = https://github.com/abo-abo/avy.git

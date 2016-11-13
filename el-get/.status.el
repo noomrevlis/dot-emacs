@@ -11,8 +11,6 @@
                          (ac-config-default))))
  (autopair status "installed" recipe
            (:name autopair :website "https://github.com/capitaomorte/autopair" :description "Autopair is an extension to the Emacs text editor that automatically pairs braces and quotes." :type github :pkgname "capitaomorte/autopair" :features autopair))
- (autopep8 status "installed" recipe
-           (:name autopep8 :description "autopep8 wrapper for emacs" :type http :url "https://gist.github.com/whirm/6122031/raw/28d0d47a95a9006b7fbb8d5ac5203577c52b9534/autopep8.el" :features autopep8))
  (avy status "installed" recipe
       (:name avy :description "Jump to things in Emacs tree-style." :type github :pkgname "abo-abo/avy" :depends
              (cl-lib)))
@@ -149,8 +147,6 @@
         (:name popup :website "https://github.com/auto-complete/popup-el" :description "Visual Popup Interface Library for Emacs" :type github :submodule nil :pkgname "auto-complete/popup-el"))
  (pos-tip status "installed" recipe
           (:name pos-tip :description "Show tooltip at point" :type emacswiki))
- (pp+ status "installed" recipe
-      (:name pp+ :auto-generated t :type emacswiki :description "Extensions to `pp.el'." :website "https://raw.github.com/emacsmirror/emacswiki.org/master/pp+.el"))
  (projectile status "installed" recipe
              (:name projectile :description "Project navigation and management library for Emacs." :type github :pkgname "bbatsov/projectile" :depends
                     (dash s f pkg-info)))
