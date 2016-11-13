@@ -194,7 +194,7 @@ See `autopair-mode' for more information on Autopair mode.
 
 ;;;***
 
-;;;### (autoloads nil "avy/avy" "avy/avy.el" (22561 43534 0 0))
+;;;### (autoloads nil "avy/avy" "avy/avy.el" (22561 62451 0 0))
 ;;; Generated autoloads from avy/avy.el
 
 (autoload 'avy-goto-char "avy/avy" "\
@@ -500,7 +500,7 @@ trees.
 
 ;;;***
 
-;;;### (autoloads nil "el-get/el-get" "el-get/el-get.el" (22345 43648
+;;;### (autoloads nil "el-get/el-get" "el-get/el-get.el" (22560 10167
 ;;;;;;  0 0))
 ;;; Generated autoloads from el-get/el-get.el
 
@@ -601,13 +601,13 @@ already installed packages is considered.
 ;;;***
 
 ;;;### (autoloads nil "el-get/el-get-bundle" "el-get/el-get-bundle.el"
-;;;;;;  (22345 43648 0 0))
+;;;;;;  (22560 10167 0 0))
 ;;; Generated autoloads from el-get/el-get-bundle.el
 
 (autoload 'el-get-bundle-el-get "el-get/el-get-bundle" "\
 
 
-\(fn SRC)" nil nil)
+\(fn SRC SYNC)" nil nil)
 
 (autoload 'el-get-bundle "el-get/el-get-bundle" "\
 Install PACKAGE and run initialization FORM.
@@ -627,9 +627,14 @@ same.  If you wish to `require' more than one feature, then use
 `:features' property in FORM.
 
 The initialization FORM may start with a property list that
-describes a local recipe.  The FORM after the property list is
-treated as initialization code, which is actually an `:after'
-property of the local recipe.
+describes a local recipe.  The property list may include the keyword
+`:bundle-sync' with a value of either `t' or `nil' to request that
+`el-get-bundle' invoke `el-get' synchronously (respectively asynchronously).
+The keyword `:bundle-async' is the inverse of `:bundle-sync'.
+\(Note that the request to run el-get synchronously may not be respected in all
+circumstances: see the definition of `el-get-bundle-el-get' for details.)
+The FORM after the property list is treated as initialization code,
+which is actually an `:after' property of the local recipe.
 
 A copy of the initialization code is stored in a directory
 specified by `el-get-bundle-init-directory' and its byte-compiled
@@ -670,7 +675,7 @@ object or a file path.
 ;;;***
 
 ;;;### (autoloads nil "el-get/el-get-list-packages" "el-get/el-get-list-packages.el"
-;;;;;;  (22345 43648 0 0))
+;;;;;;  (22560 10167 0 0))
 ;;; Generated autoloads from el-get/el-get-list-packages.el
 
 (autoload 'el-get-list-packages "el-get/el-get-list-packages" "\
@@ -1165,7 +1170,7 @@ Special commands:
 ;;;***
 
 ;;;### (autoloads nil "helm-swoop/helm-swoop" "helm-swoop/helm-swoop.el"
-;;;;;;  (22549 48649 0 0))
+;;;;;;  (22560 11276 0 0))
 ;;; Generated autoloads from helm-swoop/helm-swoop.el
 
 (autoload 'helm-swoop-back-to-last-point "helm-swoop/helm-swoop" "\
@@ -5390,7 +5395,7 @@ Turn off `show-smartparens-mode'.
 ;;;***
 
 ;;;### (autoloads nil "smooth-scrolling/smooth-scrolling" "smooth-scrolling/smooth-scrolling.el"
-;;;;;;  (22558 62618 0 0))
+;;;;;;  (22560 11838 0 0))
 ;;; Generated autoloads from smooth-scrolling/smooth-scrolling.el
 
 (defvar smooth-scrolling-mode nil "\
@@ -5746,7 +5751,7 @@ A major mode for displaying the directory tree in text mode.
 ;;;;;;  "sublimity/sublimity-attractive.el" "sublimity/sublimity-map.el"
 ;;;;;;  "sublimity/sublimity-scroll.el" "with-editor/with-editor.el"
 ;;;;;;  "ztree/ztree-diff-model.el" "ztree/ztree-util.el" "ztree/ztree.el")
-;;;;;;  (22567 63407 559630 0))
+;;;;;;  (22561 62452 825546 0))
 
 ;;;***
 
