@@ -2368,31 +2368,6 @@ Show help-echo informations in a popup tip at end of line.
 
 ;;;***
 
-;;;### (autoloads nil "highlight-indentation/highlight-indentation"
-;;;;;;  "highlight-indentation/highlight-indentation.el" (22105 47863
-;;;;;;  0 0))
-;;; Generated autoloads from highlight-indentation/highlight-indentation.el
-
-(autoload 'highlight-indentation-mode "highlight-indentation/highlight-indentation" "\
-Highlight indentation minor mode highlights indentation based on spaces
-
-\(fn &optional ARG)" t nil)
-
-(autoload 'highlight-indentation-set-offset "highlight-indentation/highlight-indentation" "\
-Set indentation offset localy in buffer, will prevent
-highlight-indentation from trying to guess indentation offset
-from major mode
-
-\(fn OFFSET)" t nil)
-
-(autoload 'highlight-indentation-current-column-mode "highlight-indentation/highlight-indentation" "\
-Hilight Indentation minor mode displays a vertical bar
-corresponding to the indentation of the current line
-
-\(fn &optional ARG)" t nil)
-
-;;;***
-
 ;;;### (autoloads nil "highlight-parentheses/highlight-parentheses"
 ;;;;;;  "highlight-parentheses/highlight-parentheses.el" (21874 16005
 ;;;;;;  0 0))
