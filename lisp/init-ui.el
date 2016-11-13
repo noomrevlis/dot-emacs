@@ -6,14 +6,8 @@
 
 ;; init max
 (set-frame-parameter nil 'fullscreen 'maximized)
-
-;; sublimity
-(setq sublimity-scroll-weight 10
-      sublimity-scroll-drift-length 5)
-(sublimity-mode 1)
-
-;https://github.com/aspiers/smooth-scrolling
-(smooth-scrolling-mode 1)
+;(global-set-key [f5] 'toggle-frame-fullscreen)
+;(set-frame-parameter nil 'fullscreen 'fullboth) ;; init fullboth
 
 (add-to-list 'load-path "~/.emacs.d/el-get/default-text-scale")
 (require 'default-text-scale)
