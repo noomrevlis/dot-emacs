@@ -8,6 +8,7 @@
 (setq show-paren-style 'parentheses)
 
 ;; regex
+(require 'pcre2el)
 (setq reb-re-syntax 'pcre)  
 
 

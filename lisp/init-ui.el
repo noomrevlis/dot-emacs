@@ -4,6 +4,16 @@
 (set-default-font "Monaco-13")
 (set-fontset-font "fontset-default" 'han '("Hiragino Sans GB W3" . "unicode-bmp"))
 
+;; sublimity
+(require 'sublimity-scroll)
+(setq sublimity-scroll-weight 10
+      sublimity-scroll-drift-length 5)
+(sublimity-mode 1)
+
+;https://github.com/aspiers/smooth-scrolling
+(require 'smooth-scrolling)
+(smooth-scrolling-mode 1)
+
 ;; init max
 (set-frame-parameter nil 'fullscreen 'maximized)
 ;(global-set-key [f5] 'toggle-frame-fullscreen)

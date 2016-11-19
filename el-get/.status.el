@@ -172,15 +172,21 @@
           (:name shackle :description "Enforce rules for popups." :website "https://github.com/wasamasa/shackle" :type github :pkgname "wasamasa/shackle"))
  (smartparens status "installed" recipe
               (:name smartparens :description "Autoinsert pairs of defined brackets and wrap regions" :type github :pkgname "Fuco1/smartparens" :depends dash))
+ (smooth-scrolling status "installed" recipe
+                   (:name smooth-scrolling :description "Make emacs scroll smoothly, keeping the point away from the top and bottom of the current buffer's window in order to keep lines of context around the point visible as much as possible, whilst avoiding sudden scroll jumps which are visually confusing." :type github :pkgname "aspiers/smooth-scrolling" :features smooth-scrolling))
  (solarized-emacs status "installed" recipe
                   (:name solarized-emacs :description "Solarized for Emacs is an Emacs port of the Solarized theme for vim, developed by Ethan Schoonover." :website "https://github.com/bbatsov/solarized-emacs" :minimum-emacs-version "24" :type github :pkgname "bbatsov/solarized-emacs" :depends dash :prepare
                          (add-to-list 'custom-theme-load-path default-directory)))
+ (sublimity status "installed" recipe
+            (:name sublimity :description "smooth-scrolling, minimap and distraction-free mode." :website "https://github.com/zk-phi/sublimity" :type github :pkgname "zk-phi/sublimity"))
  (switch-window status "installed" recipe
                 (:name switch-window :description "A *visual* way to choose a window to switch to" :type github :pkgname "dimitri/switch-window" :features switch-window))
  (undo-tree status "installed" recipe
             (:name undo-tree :description "Treat undo history as a tree" :website "http://www.dr-qubit.org/emacs.php" :type git :url "http://www.dr-qubit.org/git/undo-tree.git/"))
  (unicad status "installed" recipe
          (:name unicad :auto-generated t :type emacswiki :description "an elisp port of Mozilla Universal Charset Auto Detector" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/unicad.el"))
+ (use-package status "installed" recipe
+              (:name use-package :type github :description "A use-package declaration for simplifying your .emacs" :pkgname "jwiegley/use-package"))
  (virtualenvwrapper status "installed" recipe
                     (:name virtualenvwrapper :type github :website "https://github.com/porterjamesj/virtualenvwrapper.el" :description "virtualenv tool for emacs" :pkgname "porterjamesj/virtualenvwrapper.el"))
  (web-mode status "installed" recipe
