@@ -100,8 +100,6 @@
  (helm-swoop status "installed" recipe
              (:name helm-swoop :type github :description "Efficiently hopping squeezed lines powered by Emacs helm interface" :pkgname "ShingoFukuyama/helm-swoop" :depends
                     (helm)))
- (highlight-indentation status "installed" recipe
-                        (:name highlight-indentation :description "Function for highlighting indentation" :type git :url "https://github.com/antonj/Highlight-Indentation-for-Emacs"))
  (highlight-parentheses status "installed" recipe
                         (:name highlight-parentheses :description "Highlight the matching parentheses surrounding point." :type github :pkgname "nschum/highlight-parentheses.el"))
  (ibuffer-vc status "installed" recipe
@@ -132,8 +130,6 @@
                 (:name markdown-mode :description "Major mode to edit Markdown files in Emacs" :website "http://jblevins.org/projects/markdown-mode/" :type github :pkgname "jrblevin/markdown-mode" :prepare
                        (add-to-list 'auto-mode-alist
                                     '("\\.\\(md\\|mdown\\|markdown\\)\\'" . markdown-mode))))
- (markerpen status "installed" recipe
-            (:name markerpen :auto-generated t :type emacswiki :description "Colour and highlight arbitrary sections of buffers" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/markerpen.el"))
  (multi-term status "installed" recipe
              (:name multi-term :description "A mode based on term.el, for managing multiple terminal buffers in Emacs." :type emacswiki :features multi-term))
  (neotree status "installed" recipe
